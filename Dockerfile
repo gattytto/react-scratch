@@ -6,7 +6,6 @@ FROM alpine:latest AS build
 # Update repositories and packages
 RUN addgroup -g 1000 node \
     && adduser -u 1000 -G node -s /bin/sh -D node \
-    && mkdir /home/node && chown -R node:node /home/node \
     && apk update && apk upgrade
 
 # Install dependencies and prepare Yarn
