@@ -12,7 +12,8 @@ RUN addgroup -g 1000 node \
 RUN apk add --no-cache git \
                        nodejs \
                        yarn \
-    && yarn set version canary
+    && yarn set version canary \
+    && rm -f /package.json
 
 RUN mkdir -p /workspace \
     && cd /workspace \
